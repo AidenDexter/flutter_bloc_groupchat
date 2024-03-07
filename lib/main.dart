@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_groupchat/app_blocs.dart';
 import 'package:flutter_bloc_groupchat/app_events.dart';
+import 'package:flutter_bloc_groupchat/pages/sign_in/sign_in.dart';
 import 'package:flutter_bloc_groupchat/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,9 +31,8 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           home: const Welcome(),
-          routes: {
-            "myHomePage": (context) => const MyHomePage(),
-          },
+          theme: ThemeData(appBarTheme: const AppBarTheme(elevation: 0, backgroundColor: Colors.white)),
+          routes: {"myHomePage": (context) => const MyHomePage(), "signIn": (context) => const SingIn()},
         ),
       ),
     );
