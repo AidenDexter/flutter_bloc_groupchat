@@ -40,7 +40,10 @@ class _SingInState extends State<SingIn> {
                       buildTextField('Enter your password', 'password', 'lock')
                     ],
                   ),
-                )
+                ),
+                forgotPassword(),
+                buildLogInAdnRegButton('Log in', 'login'),
+                buildLogInAdnRegButton('Register', 'register'),
               ],
             ),
           ),
