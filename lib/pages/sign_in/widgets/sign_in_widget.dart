@@ -33,6 +33,7 @@ Widget buildThirdPartyLogin(BuildContext context) {
         top: 40.h,
         bottom: 20.h,
       ),
+      padding: EdgeInsets.only(left: 25.w, right: 25.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -76,7 +77,7 @@ Widget buildTextField(String hintText, String textType, String iconName) {
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(15.w)),
-          border: Border.all(color: AppColors.primaryFourElementText)),
+          border: Border.all(color: AppColors.primaryFourthElementText)),
       width: 325.w,
       height: 50.h,
       child: Row(
@@ -129,7 +130,11 @@ Widget forgotPassword() {
       onTap: () {},
       child: Text(
         'Forgot password',
-        style: TextStyle(color: AppColors.primaryText, decorationColor: AppColors.primaryText, fontSize: 12.sp),
+        style: TextStyle(
+            color: AppColors.primaryText,
+            decorationColor: AppColors.primaryText,
+            decoration: TextDecoration.underline,
+            fontSize: 12.sp),
       ),
     ),
   );
@@ -146,7 +151,7 @@ Widget buildLogInAdnRegButton(String buttonName, String buttonType) {
         //check for Register button
         color: buttonType == 'login' ? AppColors.primaryElement : AppColors.primaryBackground,
         borderRadius: BorderRadius.circular(15.w),
-        border: Border.all(color: buttonName == 'login' ? Colors.transparent : AppColors.primaryFourElementText),
+        border: Border.all(color: buttonName == 'login' ? Colors.transparent : AppColors.primaryFourthElementText),
         boxShadow: [
           BoxShadow(
             spreadRadius: 1,

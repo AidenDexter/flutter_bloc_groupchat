@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_groupchat/common/values/colors.dart';
 import 'package:flutter_bloc_groupchat/main.dart';
 import 'package:flutter_bloc_groupchat/pages/welcome/bloc/welcome_events.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -70,7 +71,7 @@ class _WelcomeState extends State<Welcome> {
                       dotsCount: 3,
                       mainAxisAlignment: MainAxisAlignment.center,
                       decorator: DotsDecorator(
-                        color: Colors.grey,
+                        color: AppColors.primaryThirdElementText,
                         size: const Size.square(8.0),
                         activeColor: Colors.blue,
                         activeSize: const Size(18.0, 8.0),
@@ -104,7 +105,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             title,
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.primaryText,
               fontSize: 24.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -116,7 +117,7 @@ class _WelcomeState extends State<Welcome> {
           child: Text(
             subtitle,
             style: TextStyle(
-              color: Colors.black.withOpacity(0.5),
+              color: AppColors.primarySecondaryElementText,
               fontSize: 14.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -139,7 +140,7 @@ class _WelcomeState extends State<Welcome> {
             width: 375.w,
             height: 50.h,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColors.primaryElement,
               borderRadius: BorderRadius.circular(15.w),
               boxShadow: [
                 BoxShadow(
