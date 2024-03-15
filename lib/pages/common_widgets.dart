@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_groupchat/common/values/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-AppBar buildAppBar() {
+AppBar buildAppBar(String type) {
   return AppBar(
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(
@@ -16,7 +16,7 @@ AppBar buildAppBar() {
     ),
     centerTitle: true,
     title: Text(
-      "Log In",
+      type,
       style: TextStyle(
         color: AppColors.primaryText,
         fontSize: 16.sp,

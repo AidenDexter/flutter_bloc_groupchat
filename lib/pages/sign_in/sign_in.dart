@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_groupchat/pages/sign_in/sign_in_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../common_widgets.dart';
 import 'bloc/sign_in_blocs.dart';
+import 'bloc/sign_in_event.dart';
 import 'bloc/sign_in_states.dart';
-import 'widgets/sign_in_widget.dart';
 
 class SingIn extends StatefulWidget {
   const SingIn({super.key});
@@ -22,7 +24,7 @@ class _SingInState extends State<SingIn> {
           color: Colors.white,
           child: SafeArea(
             child: Scaffold(
-              appBar: buildAppBar(),
+              appBar: buildAppBar('Log in'),
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,16 +41,24 @@ class _SingInState extends State<SingIn> {
                         children: [
                           reusableText('Email'),
                           SizedBox(height: 5.h),
-                          buildTextField('Enter your email address', 'email', 'user'),
+                          buildTextField('Enter your email address', 'email', 'user', (value) {
+                            context.read<SignInBloc>().add(EmailEvent(value));
+                          }),
                           reusableText('Password'),
                           SizedBox(height: 5.h),
-                          buildTextField('Enter your password', 'password', 'lock')
+                          buildTextField('Enter your password', 'password', 'lock', (value) {
+                            context.read<SignInBloc>().add(PasswordEvent(value));
+                          })
                         ],
                       ),
                     ),
                     forgotPassword(),
-                    buildLogInAdnRegButton('Log in', 'login'),
-                    buildLogInAdnRegButton('Register', 'register'),
+                    buildLogInAdnRegButton('Log in', 'login', () {
+                      SignInController(context: context).handleSignIn('email');
+                    }),
+                    buildLogInAdnRegButton('Sign up', 'register', () {
+                      Navigator.of(context).pushNamed('register');
+                    }),
                   ],
                 ),
               ),
