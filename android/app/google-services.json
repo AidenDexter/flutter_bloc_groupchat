@@ -1,29 +1,29 @@
 {
-  "project_info": {
-    "project_number": "904864871255",
-    "project_id": "flutter-bloc-groupchat",
-    "storage_bucket": "flutter-bloc-groupchat.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:904864871255:android:495b43edc89db3dd6c8412",
-        "android_client_info": {
-          "package_name": "com.example.flutter_bloc_groupchat"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyARb8oiTgFsMAqKoOmd-m7nGhRA0ogMvPk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
+	"project_info": {
+		"project_number": "904864871255",
+		"project_id": "flutter-bloc-groupchat",
+		"storage_bucket": "flutter-bloc-groupchat.appspot.com"
+	},
+	"client": [
+		{
+			"client_info": {
+				"mobilesdk_app_id": "1:904864871255:android:495b43edc89db3dd6c8412",
+				"android_client_info": {
+					"package_name": "com.example.flutter_bloc_groupchat"
+				}
+			},
+			"oauth_client": [],
+			"api_key": [
+				{
+					"current_key": "AIzaSyARb8oiTgFsMAqKoOmd-m7nGhRA0ogMvPk"
+				}
+			],
+			"services": {
+				"appinvite_service": {
+					"other_platform_oauth_client": []
+				}
+			}
+		}
+	],
+	"configuration_version": "1"
 }

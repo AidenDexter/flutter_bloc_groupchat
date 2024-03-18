@@ -8,14 +8,14 @@ import 'bloc/sign_in_blocs.dart';
 import 'bloc/sign_in_event.dart';
 import 'bloc/sign_in_states.dart';
 
-class SingIn extends StatefulWidget {
-  const SingIn({super.key});
+class SignIn extends StatefulWidget {
+  const SignIn({super.key});
 
   @override
-  State<SingIn> createState() => _SingInState();
+  State<SignIn> createState() => _SignInState();
 }
 
-class _SingInState extends State<SingIn> {
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SignInBloc, SignInState>(
@@ -57,7 +57,7 @@ class _SingInState extends State<SingIn> {
                       SignInController(context: context).handleSignIn('email');
                     }),
                     buildLogInAdnRegButton('Sign up', 'register', () {
-                      Navigator.of(context).pushNamed('register');
+                      Navigator.of(context).pushNamed('/register');
                     }),
                   ],
                 ),
