@@ -1,4 +1,4 @@
-# flutter_bloc_groupchat
+# flutter_bloc_shop_app
 
 A new Flutter project.
 
