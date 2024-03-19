@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_groupchat/pages/sign_in/bloc/sign_in_blocs.dart';
 
+import '../../common/values/constant.dart';
 import '../../common/widgets/flutter_toast.dart';
+import '../../global.dart';
+import 'bloc/sign_in_blocs.dart';
 
 class SignInController {
   final BuildContext context;
@@ -47,11 +49,15 @@ class SignInController {
 
           var user = credential.user;
           if (user != null) {
-            //we got verified user from Firebase
             print(('user exist'));
+            Global.storageService.setString(
+              AppConstants.STORAGE_USER_TOKEN_KEY,
+              '12345678',
+            );
+
+            if (!context.mounted) return;
             Navigator.of(context).pushNamedAndRemoveUntil('/application', (route) => false);
           } else {
-            //we have error getting user from firebase
             toastInfo(msg: 'Currently you are not a user of this app');
             return;
           }

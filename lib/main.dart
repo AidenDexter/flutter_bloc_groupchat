@@ -8,18 +8,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'common/routes/routes.dart';
+import 'global.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  Platform.isAndroid
-      ? await Firebase.initializeApp(
-          options: const FirebaseOptions(
-          apiKey: 'AIzaSyARb8oiTgFsMAqKoOmd-m7nGhRA0ogMvPk',
-          appId: '1:904864871255:android:495b43edc89db3dd6c8412',
-          messagingSenderId: '904864871255',
-          projectId: 'flutter-bloc-groupchat',
-        ))
-      : await Firebase.initializeApp();
+  await Global.init();
 
   runApp(const MyApp());
 }

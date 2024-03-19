@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_groupchat/common/routes/names.dart';
-import 'package:flutter_bloc_groupchat/pages/application/application_page.dart';
-import 'package:flutter_bloc_groupchat/pages/register/bloc/register_blocs.dart';
-import 'package:flutter_bloc_groupchat/pages/register/register.dart';
-import 'package:flutter_bloc_groupchat/pages/sign_in/bloc/sign_in_blocs.dart';
-import 'package:flutter_bloc_groupchat/pages/sign_in/sign_in.dart';
-import 'package:flutter_bloc_groupchat/pages/welcome/bloc/welcome_blocs.dart';
-import 'package:flutter_bloc_groupchat/pages/welcome/welcome.dart';
 
+import '../../global.dart';
+import '../../pages/application/application_page.dart';
 import '../../pages/application/bloc/bloc/app_blocs.dart';
+import '../../pages/register/bloc/register_blocs.dart';
+import '../../pages/register/register.dart';
+import '../../pages/sign_in/bloc/sign_in_blocs.dart';
+import '../../pages/sign_in/sign_in.dart';
+import '../../pages/welcome/bloc/welcome_blocs.dart';
+import '../../pages/welcome/welcome.dart';
+import 'names.dart';
 
 class AppPages {
   static List<PageEntity> routes() {
@@ -54,7 +55,14 @@ class AppPages {
       // check for route name matching  when navigator gets triggered.
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
-        print('valid rote name ${settings.name}');
+        bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
+        if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {
+          bool isLoggedIn = Global.storageService.getIsLoggedIn();
+          if (isLoggedIn) {
+            return MaterialPageRoute(builder: (_) => const ApplicationPage(), settings: settings);
+          }
+          return MaterialPageRoute(builder: (_) => SignIn(), settings: settings);
+        }
         return MaterialPageRoute(builder: (_) => result.first.page, settings: settings);
       }
     }
