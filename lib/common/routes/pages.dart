@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../global.dart';
 import '../../pages/application/application_page.dart';
-import '../../pages/application/bloc/bloc/app_blocs.dart';
+
+import '../../pages/application/bloc/app_blocs.dart';
 import '../../pages/register/bloc/register_blocs.dart';
 import '../../pages/register/register.dart';
 import '../../pages/sign_in/bloc/sign_in_blocs.dart';

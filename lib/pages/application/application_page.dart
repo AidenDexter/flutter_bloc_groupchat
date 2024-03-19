@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_groupchat/common/values/colors.dart';
-import 'package:flutter_bloc_groupchat/pages/application/bloc/bloc/app_blocs.dart';
-import 'package:flutter_bloc_groupchat/pages/application/bloc/bloc/app_events.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'application_widgets.dart';
+import 'bloc/app_blocs.dart';
+import 'bloc/app_events.dart';
 
 class ApplicationPage extends StatefulWidget {
   const ApplicationPage({super.key});
