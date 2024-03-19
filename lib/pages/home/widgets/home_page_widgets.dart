@@ -29,6 +29,7 @@ AppBar buildAppBar() {
   );
 }
 
+//reusable big text widget
 Widget homePageText(
   String text, {
   Color color = AppColors.primaryText,
@@ -40,5 +41,59 @@ Widget homePageText(
       text,
       style: TextStyle(color: color, fontSize: 24.sp, fontWeight: FontWeight.bold),
     ),
+  );
+}
+
+Widget searchView() {
+  return Row(
+    children: [
+      Container(
+        width: 280.w,
+        height: 40.w,
+        decoration: BoxDecoration(
+            color: AppColors.primaryBackground,
+            borderRadius: BorderRadius.circular(15.h),
+            border: Border.all(color: AppColors.primaryFourthElementText)),
+        child: Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 17.w),
+              width: 16.w,
+              height: 16.w,
+              child: Image.asset('assets/icons/search.png'),
+            ),
+            Container(
+              width: 240.w,
+              height: 40.h,
+              child: TextField(
+                keyboardType: TextInputType.multiline,
+                decoration: const InputDecoration(
+                    hintText: 'search your course',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                    hintStyle: TextStyle(color: AppColors.primarySecondaryElementText)),
+                style: TextStyle(
+                    color: AppColors.primaryText, fontFamily: 'Avenir', fontWeight: FontWeight.normal, fontSize: 14.sp),
+                autocorrect: false,
+                obscureText: false,
+              ),
+            )
+          ],
+        ),
+      )
+    ],
   );
 }
