@@ -68,6 +68,7 @@ Widget searchView() {
               child: TextField(
                 keyboardType: TextInputType.multiline,
                 decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.fromLTRB(5, 5, 0, 5),
                     hintText: 'search your course',
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -92,6 +93,20 @@ Widget searchView() {
               ),
             )
           ],
+        ),
+      ),
+      GestureDetector(
+        child: Container(
+          width: 40.w,
+          height: 40.w,
+          decoration: BoxDecoration(
+            color: AppColors.primaryElement,
+            borderRadius: BorderRadius.circular(
+              13.w,
+            ),
+            border: Border.all(color: AppColors.primaryElement),
+          ),
+          child: Image.asset('assets/icons/options.png'),
         ),
       )
     ],
