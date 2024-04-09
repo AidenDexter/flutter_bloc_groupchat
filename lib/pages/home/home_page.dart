@@ -33,6 +33,29 @@ class _HomePageState extends State<HomePage> {
                 SliverToBoxAdapter(child: searchView()),
                 SliverToBoxAdapter(child: slidersView(context, state)),
                 SliverToBoxAdapter(child: menuView()),
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 18.h,
+                    horizontal: 0.w,
+                  ),
+                  sliver: SliverGrid(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 15,
+                      crossAxisSpacing: 15,
+                      childAspectRatio: 1.6,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      childCount: 4,
+                      (BuildContext context, int index) {
+                        return GestureDetector(
+                          onTap: () {},
+                          child: topicGrid(),
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ],
             ),
           );

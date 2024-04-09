@@ -10,7 +10,7 @@ AppBar buildAppBar(String type) {
       ),
       child: Container(
         color: AppColors.primarySecondaryBackground,
-        //height defines thethickness of the line
+        //height defines the thickness of the line
         height: 1.0,
       ),
     ),

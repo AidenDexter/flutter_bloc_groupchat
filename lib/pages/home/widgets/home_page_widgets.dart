@@ -182,7 +182,7 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableText('Choose your course'),
+            _reusableText('Choose anther chat'),
             GestureDetector(
               child: _reusableText(
                 'See all',
@@ -235,6 +235,54 @@ Container _reusableMenuText(String menuText,
       color: textColor,
       fontWeight: FontWeight.normal,
       fontSize: 11,
+    ),
+  );
+}
+
+//for course grid view ui
+Container topicGrid() {
+  return Container(
+    padding: EdgeInsets.all(12.w),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(15.w),
+      image: const DecorationImage(
+        fit: BoxFit.fill,
+        image: AssetImage(
+          'assets/icons/image_1.png',
+        ),
+      ),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Text(
+          maxLines: 1,
+          overflow: TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          'I can see clearly now',
+          style: TextStyle(
+            color: AppColors.primaryElementText,
+            fontSize: 11.sp,
+          ),
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Text(
+          maxLines: 1,
+          overflow: TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          'the rain is gone',
+          style: TextStyle(
+            color: AppColors.primaryFourthElementText,
+            fontSize: 8.sp,
+            fontWeight: FontWeight.normal,
+          ),
+        ),
+      ],
     ),
   );
 }
