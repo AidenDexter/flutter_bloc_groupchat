@@ -101,6 +101,7 @@ Widget searchView() {
           ],
         ),
       ),
+      SizedBox(width: 5.w),
       GestureDetector(
         child: Container(
           width: 40.w,
