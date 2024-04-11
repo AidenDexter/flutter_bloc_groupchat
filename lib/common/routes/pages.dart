@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_groupchat/pages/profile/settings/bloc/settings_bloc.dart';
+import 'package:flutter_bloc_groupchat/pages/profile/settings/settings_page.dart';
 
 import '../../global.dart';
 import '../../pages/application/application_page.dart';
@@ -44,6 +46,11 @@ class AppPages {
         route: AppRoutes.HOME_PAGE,
         page: const HomePage(),
         bloc: BlocProvider(create: (_) => HomePageBloc()),
+      ),
+      PageEntity(
+        route: AppRoutes.SETTINGS,
+        page: const SettingsPage(),
+        bloc: BlocProvider(create: (_) => SettingsBloc()),
       ),
     ];
   }

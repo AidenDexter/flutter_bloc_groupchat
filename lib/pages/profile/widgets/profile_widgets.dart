@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_groupchat/common/routes/names.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/values/colors.dart';
@@ -77,12 +78,13 @@ var imagesInfo = <String, String>{
   'Loves': 'heart_1.png',
   'Reminders': 'cube.png'
 };
-Widget buildListView() {
+Widget buildListView(BuildContext context) {
   return Column(
     children: [
       ...List.generate(
         imagesInfo.length,
         (index) => GestureDetector(
+          onTap: () => Navigator.of(context).pushNamed(AppRoutes.SETTINGS),
           child: Container(
             margin: EdgeInsets.only(bottom: 15.h),
             child: Row(
