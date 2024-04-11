@@ -5,7 +5,6 @@ import '../../../common/values/colors.dart';
 
 AppBar buildProfileAppBar() {
   return AppBar(
-    // leading: ,
     centerTitle: true,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,7 +73,9 @@ Widget profileIconAndEditButton() {
 var imagesInfo = <String, String>{
   'Settings': 'settings.png',
   'Payment details': 'credit-card.png',
-  'Love': 'award.png',
+  'Achievements': 'award.png',
+  'Loves': 'heart_1.png',
+  'Reminders': 'cube.png'
 };
 Widget buildListView() {
   return Column(
