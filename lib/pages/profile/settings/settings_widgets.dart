@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../common/widgets/base_text_widget.dart';
+
 AppBar buildSettingsAppBar() {
-  return AppBar(centerTitle: true, title: Text('Settings'));
+  return AppBar(centerTitle: true, title: reusableText('Settings'));
 }
 
 Widget settingLogOutButton(BuildContext context, void Function()? removeUserData) {

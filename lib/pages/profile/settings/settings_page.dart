@@ -5,7 +5,6 @@ import 'package:flutter_bloc_groupchat/common/values/constant.dart';
 import 'package:flutter_bloc_groupchat/global.dart';
 import 'package:flutter_bloc_groupchat/pages/application/bloc/app_blocs.dart';
 import 'package:flutter_bloc_groupchat/pages/application/bloc/app_events.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'bloc/settings_bloc.dart';
 import 'bloc/settings_state.dart';

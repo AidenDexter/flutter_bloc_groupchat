@@ -3,6 +3,7 @@ import 'package:flutter_bloc_groupchat/common/routes/names.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/values/colors.dart';
+import '../../../common/widgets/base_text_widget.dart';
 
 AppBar buildProfileAppBar() {
   return AppBar(
@@ -15,14 +16,7 @@ AppBar buildProfileAppBar() {
           height: 24.h,
           child: Image.asset('assets/icons/menu.png'),
         ),
-        Text(
-          "Profile",
-          style: TextStyle(
-            color: AppColors.primaryText,
-            fontSize: 16.sp,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        reusableText("Profile"),
         SizedBox(
           width: 24.w,
           height: 24.h,

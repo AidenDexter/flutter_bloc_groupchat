@@ -1,6 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_groupchat/pages/home/bloc/home_page_bloc.dart';
 import 'package:flutter_bloc_groupchat/pages/home/bloc/home_page_event.dart';
@@ -8,6 +8,7 @@ import 'package:flutter_bloc_groupchat/pages/home/bloc/home_page_state.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/values/colors.dart';
+import '../../../common/widgets/base_text_widget.dart';
 
 AppBar buildAppBar() {
   return AppBar(
@@ -182,9 +183,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableText('Choose anther chat'),
+            reusableText('Choose anther chat'),
             GestureDetector(
-              child: _reusableText(
+              child: reusableText(
                 'See all',
                 color: AppColors.primaryThirdElementText,
                 fontSize: 10,
@@ -207,22 +208,7 @@ Widget menuView() {
   );
 }
 
-Widget _reusableText(String text,
-    {Color color = AppColors.primaryText, int fontSize = 16, FontWeight fontWeight = FontWeight.bold}) {
-  return Container(
-    child: Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontWeight: fontWeight,
-        fontSize: fontSize.sp,
-      ),
-    ),
-  );
-}
-
 //for the menu buttons, reusable text
-
 Container _reusableMenuText(String menuText,
     {Color textColor = AppColors.primaryElementText, Color backgroundColor = AppColors.primaryElement}) {
   return Container(
@@ -230,7 +216,7 @@ Container _reusableMenuText(String menuText,
     decoration: BoxDecoration(
         color: backgroundColor, borderRadius: BorderRadius.circular(7.w), border: Border.all(color: backgroundColor)),
     padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 5.h, bottom: 5.h),
-    child: _reusableText(
+    child: reusableText(
       menuText,
       color: textColor,
       fontWeight: FontWeight.normal,
